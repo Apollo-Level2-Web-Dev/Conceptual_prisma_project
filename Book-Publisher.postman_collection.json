@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "b990edd4-7378-416f-9cc9-a19d61ed5f0f",
+		"name": "Book-Publisher",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31641809",
+		"_collection_link": "https://warped-crater-802760.postman.co/workspace/Team-Workspace~ad63b812-ac36-4bfb-8050-03f1a264c26e/collection/31641809-b990edd4-7378-416f-9cc9-a19d61ed5f0f?action=share&source=collection_link&creator=31641809"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"ABC\",\r\n    \"email\":\"example@example.com\",\r\n    \"password\": \"bolbonaa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/v1/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"example@example.com\",\r\n    \"password\": \"bolbonaa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/v1/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "author",
+			"item": [
+				{
+					"name": "create author",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Respedcted Author\",\r\n    \"birthYear\": 1956\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/v1/author/create"
+					},
+					"response": []
+				},
+				{
+					"name": "Get ALL",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiMDlkYWU5MS1mZTFiLTQxMmYtOTUyNy1lN2JjNWMxMDQ2ZDQiLCJpYXQiOjE3MzExNzAyNTgsImV4cCI6MTczMzc2MjI1OH0.ymZqOOypkbSY-pAw0mAXJwjlUzdQyggZYq1kfsh1fOs",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:5000/api/v1/author"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
