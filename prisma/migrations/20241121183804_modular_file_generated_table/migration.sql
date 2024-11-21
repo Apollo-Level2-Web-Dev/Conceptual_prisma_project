@@ -1,24 +1,5 @@
--- CreateTable
-CREATE TABLE "User" (
-    "id" SERIAL NOT NULL,
-    "name" TEXT NOT NULL,
-    "email" TEXT NOT NULL,
-    "role" TEXT NOT NULL,
-
-    CONSTRAINT "User_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
-CREATE TABLE "Book" (
-    "id" SERIAL NOT NULL,
-    "title" TEXT NOT NULL,
-    "publishedYear" INTEGER NOT NULL,
-    "userId" INTEGER NOT NULL,
-    "authorId" INTEGER NOT NULL,
-    "categoryId" INTEGER NOT NULL,
-
-    CONSTRAINT "Book_pkey" PRIMARY KEY ("id")
-);
+-- CreateEnum
+CREATE TYPE "Role" AS ENUM ('ADMIN', 'USER');
 
 -- CreateTable
 CREATE TABLE "Author" (
@@ -30,11 +11,34 @@ CREATE TABLE "Author" (
 );
 
 -- CreateTable
+CREATE TABLE "Book" (
+    "id" SERIAL NOT NULL,
+    "title" TEXT NOT NULL,
+    "publishedYear" INTEGER NOT NULL,
+    "authorId" INTEGER NOT NULL,
+    "categoryId" INTEGER NOT NULL,
+    "userId" INTEGER NOT NULL,
+
+    CONSTRAINT "Book_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "Category" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
 
     CONSTRAINT "Category_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "User" (
+    "id" SERIAL NOT NULL,
+    "name" TEXT NOT NULL,
+    "email" TEXT NOT NULL,
+    "password" TEXT NOT NULL,
+    "role" TEXT NOT NULL,
+
+    CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex

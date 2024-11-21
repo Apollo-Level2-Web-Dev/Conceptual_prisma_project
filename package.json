@@ -4,7 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts"
+    "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
+    "prisma:format": "prisma format --schema prisma/schema",
+    "prisma:db-push": "prisma db push --schema prisma/schema",
+    "prisma:generate": "prisma generate --schema prisma/schema",
+    "prisma:migrate": "prisma migrate dev --schema prisma/schema"
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",
